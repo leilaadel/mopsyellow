@@ -19,7 +19,8 @@ class Dashboard extends Component {
         marginRight:"0px", 
         width:"100%",
         background: "#2D2F33",
-        color:"white" }} className="container valign-wrapper">
+        color:"white",
+        maxWidth: "inherit" }} className="container valign-wrapper">
         <div className="row">
           <div className="landing-copy col s12 center-align">
             <h4>

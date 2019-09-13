@@ -59,7 +59,8 @@ class Register extends Component {
         marginRight:"0px", 
         width:"100%",
         background: "#2D2F33",
-        color:"white"
+        color:"white",
+        maxWidth: "inherit"
     }}>
         <div className="row">
           <div className="col s8 offset-s2">

@@ -9,7 +9,8 @@ class Landing extends Component {
           marginRight:"0px", 
           width:"100%",
           background: "#2D2F33",
-          color:"white"
+          color:"white",
+          maxWidth: "inherit"
            }} className="container">
         <div className="row top-banner-row" 
         style={{

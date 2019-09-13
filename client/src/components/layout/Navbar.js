@@ -68,6 +68,18 @@ class Navbar extends Component {
               >
                 About
               </Link> */}
+              <Link
+                to="/yourphotos"
+                style={{
+                  width: "140px",
+                  borderRadius: "3px",
+                  letterSpacing: "1.5px",
+                  marginLeft:"15px"
+                }}
+                className="hoverable accent-3"
+              >
+                Your Photos
+              </Link>
             </div>
               <div className="col s4" style={{textAlign:"right"}}>
               <Link
