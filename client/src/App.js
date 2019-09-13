@@ -9,6 +9,8 @@ import store from "./store";
 
 import Navbar from "./components/layout/Navbar";
 import Landing from "./components/layout/Landing";
+import iOSUser from "./components/layout/iOSUser";
+import iOSPhotographer from "./components/layout/iOSPhotographer";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
@@ -45,6 +47,8 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/iosuser" component={iOSUser} />
+            <Route exact path="/iosphotographer" component={iOSPhotographer} />
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>
