@@ -38,7 +38,7 @@ if (localStorage.jwtToken) {
     window.location.href = "./login";
   }
 }
-class App extends Component {
+class App extends Component{
   render() {
     return (
       <Provider store={store}>
@@ -61,3 +61,5 @@ class App extends Component {
   }
 }
 export default App;
+
+// <Route exact path="/yourphotos" component={YourPhotos} />

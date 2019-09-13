@@ -1,180 +1,322 @@
-//import React, { Component } from "react";
-import { Link } from "react-router-dom";
-/*
-class YourPhotos extends Component {
-  render() {
-    return (
-      <div style={{ 
-          marginLeft:"0px", 
-          marginRight:"0px", 
-          width:"100%",
-          background: "#2D2F33",
-          color:"white",
-          maxWidth: "inherit"
-           }} className="container">
-        <div className="row top-banner-row" 
-        style={{
-          display: "flex",
-          paddingTop: "20px",
-          backgroundColor: "#c0aa3d",
-          position: "relative",
-          height: "300px"//,
-         // clipPath: polygon( 0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw) )
+import PropTypes from 'prop-types';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Gallery from './Gallery';
+import CheckButton from './CheckButton';
+
+class YourPhotos extends React.Component {
+    constructor(props){
+        super(props);
+
+        this.state = {
+            images: this.props.images,
+            selectAllChecked: false
+        };
+
+        this.onSelectImage = this.onSelectImage.bind(this);
+        this.getSelectedImages = this.getSelectedImages.bind(this);
+        this.onClickSelectAll = this.onClickSelectAll.bind(this);
+    }
+
+    allImagesSelected (images){
+        var f = images.filter(
+            function (img) {
+                return img.isSelected == true;
+            }
+        );
+        return f.length == images.length;
+    }
+
+    onSelectImage (index, image) {
+        var images = this.state.images.slice();
+        var img = images[index];
+        if(img.hasOwnProperty("isSelected"))
+            img.isSelected = !img.isSelected;
+        else
+            img.isSelected = true;
+
+        this.setState({
+            images: images
+        });
+
+        if(this.allImagesSelected(images)){
+            this.setState({
+                selectAllChecked: true
+            });
+        }
+        else {
+            this.setState({
+                selectAllChecked: false
+            });
+        }
+    }
+
+    getSelectedImages () {
+        var selected = [];
+        for(var i = 0; i < this.state.images.length; i++)
+            if(this.state.images[i].isSelected == true)
+                selected.push(i);
+        return selected;
+    }
+
+    onClickSelectAll () {
+        var selectAllChecked = !this.state.selectAllChecked;
+        this.setState({
+            selectAllChecked: selectAllChecked
+        });
+
+        var images = this.state.images.slice();
+        if(selectAllChecked){
+            for(var i = 0; i < this.state.images.length; i++)
+                images[i].isSelected = true;
+        }
+        else {
+            for(var i = 0; i < this.state.images.length; i++)
+                images[i].isSelected = false;
+
+        }
+        this.setState({
+            images: images
+        });
+    }
+
+    render () {
+        return (
+                <div style={{backgroundColor: "#c0aa3d"}}>
+                <CheckButton
+            index={0}
+            isSelected={this.state.selectAllChecked}
+            onClick={this.onClickSelectAll}
+            parentHover={true}
+            color={"rgba(0,0,0,0.54)"}
+            selectedColor={"#4285f4"}
+            hoverColor={"rgba(0,0,0,0.54)"}/>
+                <div style={{
+                    height: "36px",
+                    display: "flex",
+                    alignItems: "center"
                 }}>
-          <div className="col s4 info-box-banner">
-            <div className="row">
-              <div className="col s12 info-box-banner-client" style={{textAlign: "center"}}>
-                <h2 className="banner-client-h2" style={{ fontSize:"2.30rem"}}>PHOTOSSSSS</h2>
-              </div>
-            </div>
-            <hr className="header-hr" style={{width:"50%", color:"white"}} />
-            <div className="row">
-              <div className="col s12 info-box-banner-photographer" style={{textAlign: "center"}}>
-                <h2 className="banner-photographer-h2" style={{ fontSize:"2.30rem"}}>Grab your Camera</h2>
-              </div>
-            </div>
-          </div>
-          <div className="col s4 info-box-banner">
-            <div className="row">
-              <div className="col s12 info-box-banner-client" style={{textAlign: "center"}}>
-                <h2 className="banner-client-h2" style={{ fontSize:"2.30rem"}}>Find a Scenic Location</h2>
-              </div>
-            </div>
-            <hr className="header-hr" style={{width:"50%", color:"white"}} />
-            <div className="row">
-              <div className="col s12 info-box-banner-photographer" style={{textAlign: "center"}}>
-                <h2 className="banner-photographer-h2" style={{ fontSize:"2.30rem"}}>Look for the Crowds</h2>
-              </div>
-            </div>
-          </div>
-          <div className="col s4 info-box-banner">
-            <div className="row">
-              <div className="col s12 info-box-banner-client" style={{textAlign: "center"}}>
-                <h2 className="banner-client-h2" style={{ fontSize:"2.30rem"}}>Get a Timeless Memory</h2>
-              </div>
-            </div>
-            <hr className="header-hr" style={{width:"50%", color:"white"}} />
-            <div className="row">
-              <div className="col s12 info-box-banner-photographer" style={{textAlign: "center"}}>
-                <h2 className="banner-photographer-h2" style={{ fontSize:"2.30rem"}}>Snap the Smiles</h2>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col s12" style={{color:"white", textAlign: "center"}}>
-            <h2 className="post-box-h2">Make Memories that will last a lifetime</h2>
-            <div className="post-box-desc" style={{fontSize:"20px"}}>
-              <p>Wish you had access to high quality photography when and where you need it?</p>
-              <p>With PhotoSwami all you have to do is show up and photographers will be there ready to snap the perfect shot everytime</p>
-              <p>It's simple! Once they take your photos it will be texted to you and you can choose your favorites to purchase</p>
-              <p>Don't like the photos? No problem, have more taken or decide not to buy them there is no obligation</p>
-            </div>
-          </div>
-        </div>
-        <div className="footer-banner row" style={{
-          marginTop: "20px",
-          //clippath
-          minHeight:"200px",
-          backgroundColor:"#c0aa3d"
-        }}>
-        </div>
-      </div>
-    );
-  }
+                select all
+                </div>
+                <div style={{
+                    padding: "2px",
+                    color: "#666"
+                }}>Selected images: {this.getSelectedImages().toString()}</div>
+                <div style={{
+                    display: "block",
+                    minHeight: "1px",
+                    width: "100%",
+                    border: "1px solid #2D2F33",
+                    overflow: "auto"}}>
+                <Gallery
+            images={this.state.images}
+            onSelectImage={this.onSelectImage}
+            showLightboxThumbnails={true}/>
+                </div>
+                </div>
+        );
+    }
 }
 
-export default YourPhotos;
-*/
-
-import React, { useState, useEffect, Component } from "react";
-
-const Checkmark = ({ selected }) => (
-  <div
-    style={
-      selected
-        ? { left: "4px", top: "4px", position: "absolute", zIndex: "1" }
-        : { display: "none" }
-    }
-  >
-    <svg
-      style={{ fill: "white", position: "absolute" }}
-      width="24px"
-      height="24px"
-    >
-      <circle cx="12.5" cy="12.2" r="8.292" />
-    </svg>
-    <svg
-      style={{ fill: "#06befa", position: "absolute" }}
-      width="24px"
-      height="24px"
-    >
-      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-    </svg>
-  </div>
-);
-
-const imgStyle = {
-  transition: "transform .135s cubic-bezier(0.0,0.0,0.2,1),opacity linear .15s"
-};
-const selectedImgStyle = {
-  transform: "translateZ(0px) scale3d(0.9, 0.9, 1)",
-  transition: "transform .135s cubic-bezier(0.0,0.0,0.2,1),opacity linear .15s"
-};
-const cont = {
-  backgroundColor: "#eee",
-  cursor: "pointer",
-  overflow: "hidden",
-  position: "relative"
+YourPhotos.propTypes = {
+    images: PropTypes.arrayOf(
+        PropTypes.shape({
+            src: PropTypes.string.isRequired,
+            thumbnail: PropTypes.string.isRequired,
+            srcset: PropTypes.array,
+            caption: PropTypes.string,
+            thumbnailWidth: PropTypes.number.isRequired,
+            thumbnailHeight: PropTypes.number.isRequired,
+            isSelected: PropTypes.bool
+        })
+    ).isRequired
 };
 
-const YourPhotos = ({
-  index,
-  photo,
-  margin,
-  direction,
-  top,
-  left,
-  selected
-}) => {
-  const [isSelected, setIsSelected] = useState(selected);
-  //calculate x,y scale
-  const sx = (100 - (30 / photo.width) * 100) / 100;
-  const sy = (100 - (30 / photo.height) * 100) / 100;
-  selectedImgStyle.transform = `translateZ(0px) scale3d(${sx}, ${sy}, 1)`;
-
-  if (direction === "column") {
-    cont.position = "absolute";
-    cont.left = left;
-    cont.top = top;
-  }
-
-  const handleOnClick = e => {
-    setIsSelected(!isSelected);
-  };
-
-  useEffect(() => {
-    setIsSelected(selected);
-  }, [selected]);
-
-  return (
-    <div
-      style={{ margin, height: photo.height, width: photo.width, ...cont }}
-      className={!isSelected ? "not-selected" : ""}
-    >
-      <Checkmark selected={isSelected ? true : false} />
-      <img
-        alt={photo.title}
-        style={
-          isSelected ? { ...imgStyle, ...selectedImgStyle } : { ...imgStyle }
+YourPhotos.defaultProps = {
+    images: [
+        {
+            src: "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_b.jpg",
+            thumbnail: "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_n.jpg",
+            thumbnailWidth: 320,
+            thumbnailHeight: 174,
+            tags: [{value: "Nature", title: "Nature"}, {value: "Flora", title: "Flora"}],
+            caption: "After Rain (Jeshu John - designerspics.com)"
+        },
+        {
+            src: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_b.jpg",
+            thumbnail: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_n.jpg",
+            thumbnailWidth: 320,
+            thumbnailHeight: 212,
+            caption: "Boats (Jeshu John - designerspics.com)"
+        },
+        {
+            src: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg",
+            thumbnail: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_n.jpg",
+            thumbnailWidth: 320,
+            thumbnailHeight: 212,
+            caption: "Color Pencils (Jeshu John - designerspics.com)"
+        },
+        {
+            src: "https://c7.staticflickr.com/9/8546/28354329294_bb45ba31fa_b.jpg",
+            thumbnail: "https://c7.staticflickr.com/9/8546/28354329294_bb45ba31fa_n.jpg",
+            thumbnailWidth: 320,
+            thumbnailHeight: 213,
+            caption: "Red Apples with other Red Fruit (foodiesfeed.com)"
+        },
+        {
+            src: "https://c6.staticflickr.com/9/8890/28897154101_a8f55be225_b.jpg",
+            thumbnail: "https://c6.staticflickr.com/9/8890/28897154101_a8f55be225_n.jpg",
+            thumbnailWidth: 320,
+            thumbnailHeight: 183,
+            caption: "37H (gratispgraphy.com)"
+        },
+        {
+            src: "https://c5.staticflickr.com/9/8768/28941110956_b05ab588c1_b.jpg",
+            thumbnail: "https://c5.staticflickr.com/9/8768/28941110956_b05ab588c1_n.jpg",
+            thumbnailWidth: 240,
+            thumbnailHeight: 320,
+            tags: [{value: "Nature", title: "Nature"}],
+            caption: "8H (gratisography.com)"
+        },
+        {
+            src: "https://c3.staticflickr.com/9/8583/28354353794_9f2d08d8c0_b.jpg",
+            thumbnail: "https://c3.staticflickr.com/9/8583/28354353794_9f2d08d8c0_n.jpg",
+            thumbnailWidth: 320,
+            thumbnailHeight: 190,
+            caption: "286H (gratisography.com)"
+        },
+        {
+            src: "https://c7.staticflickr.com/9/8569/28941134686_d57273d933_b.jpg",
+            thumbnail: "https://c7.staticflickr.com/9/8569/28941134686_d57273d933_n.jpg",
+            thumbnailWidth: 320,
+            thumbnailHeight: 148,
+            tags: [{value: "People", title: "People"}],
+            caption: "315H (gratisography.com)"
+        },
+        {
+            src: "https://c6.staticflickr.com/9/8342/28897193381_800db6419e_b.jpg",
+            thumbnail: "https://c6.staticflickr.com/9/8342/28897193381_800db6419e_n.jpg",
+            thumbnailWidth: 320,
+            thumbnailHeight: 213,
+            caption: "201H (gratisography.com)"
+        },
+        {
+            src: "https://c2.staticflickr.com/9/8239/28897202241_1497bec71a_b.jpg",
+            alt: "Big Ben - London",
+            thumbnail: "https://c2.staticflickr.com/9/8239/28897202241_1497bec71a_n.jpg",
+            thumbnailWidth: 248,
+            thumbnailHeight: 320,
+            caption: "Big Ben (Tom Eversley - isorepublic.com)"
+        },
+        {
+            src: "https://c7.staticflickr.com/9/8785/28687743710_3580fcb5f0_b.jpg",
+            alt: "Red Zone - Paris",
+            thumbnail: "https://c7.staticflickr.com/9/8785/28687743710_3580fcb5f0_n.jpg",
+            thumbnailWidth: 320,
+            thumbnailHeight: 113,
+            tags: [{value: "People", title: "People"}],
+            caption: "Red Zone - Paris (Tom Eversley - isorepublic.com)"
+        },
+        {
+            src: "https://c6.staticflickr.com/9/8520/28357073053_cafcb3da6f_b.jpg",
+            alt: "Wood Glass",
+            thumbnail: "https://c6.staticflickr.com/9/8520/28357073053_cafcb3da6f_n.jpg",
+            thumbnailWidth: 313,
+            thumbnailHeight: 320,
+            caption: "Wood Glass (Tom Eversley - isorepublic.com)"
+        },
+        {
+            src: "https://c8.staticflickr.com/9/8104/28973555735_ae7c208970_b.jpg",
+            thumbnail: "https://c8.staticflickr.com/9/8104/28973555735_ae7c208970_n.jpg",
+            thumbnailWidth: 320,
+            thumbnailHeight: 213,
+            caption: "Flower Interior Macro (Tom Eversley - isorepublic.com)"
+        },
+        {
+            src: "https://c4.staticflickr.com/9/8562/28897228731_ff4447ef5f_b.jpg",
+            thumbnail: "https://c4.staticflickr.com/9/8562/28897228731_ff4447ef5f_n.jpg",
+            thumbnailWidth: 320,
+            thumbnailHeight: 194,
+            caption: "Old Barn (Tom Eversley - isorepublic.com)"
+        },
+        {
+            src: "https://c2.staticflickr.com/8/7577/28973580825_d8f541ba3f_b.jpg",
+            alt: "Cosmos Flower",
+            thumbnail: "https://c2.staticflickr.com/8/7577/28973580825_d8f541ba3f_n.jpg",
+            thumbnailWidth: 320,
+            thumbnailHeight: 213,
+            caption: "Cosmos Flower Macro (Tom Eversley - isorepublic.com)"
+        },
+        {
+            src: "https://c7.staticflickr.com/9/8106/28941228886_86d1450016_b.jpg",
+            thumbnail: "https://c7.staticflickr.com/9/8106/28941228886_86d1450016_n.jpg",
+            thumbnailWidth: 271,
+            thumbnailHeight: 320,
+            caption: "Orange Macro (Tom Eversley - isorepublic.com)"
+        },
+        {
+            src: "https://c1.staticflickr.com/9/8330/28941240416_71d2a7af8e_b.jpg",
+            thumbnail: "https://c1.staticflickr.com/9/8330/28941240416_71d2a7af8e_n.jpg",
+            thumbnailWidth: 320,
+            thumbnailHeight: 213,
+            tags: [{value: "Nature", title: "Nature"}, {value: "People", title: "People"}],
+            caption: "Surfer Sunset (Tom Eversley - isorepublic.com)"
+        },
+        {
+            src: "https://c1.staticflickr.com/9/8707/28868704912_cba5c6600e_b.jpg",
+            thumbnail: "https://c1.staticflickr.com/9/8707/28868704912_cba5c6600e_n.jpg",
+            thumbnailWidth: 320,
+            thumbnailHeight: 213,
+            tags: [{value: "People", title: "People"}, {value: "Sport", title: "Sport"}],
+            caption: "Man on BMX (Tom Eversley - isorepublic.com)"
+        },
+        {
+            src: "https://c4.staticflickr.com/9/8578/28357117603_97a8233cf5_b.jpg",
+            thumbnail: "https://c4.staticflickr.com/9/8578/28357117603_97a8233cf5_n.jpg",
+            thumbnailWidth: 320,
+            thumbnailHeight: 213,
+            caption: "Ropeman - Thailand (Tom Eversley - isorepublic.com)"
+        },
+        {
+            src: "https://c4.staticflickr.com/8/7476/28973628875_069e938525_b.jpg",
+            thumbnail: "https://c4.staticflickr.com/8/7476/28973628875_069e938525_n.jpg",
+            thumbnailWidth: 320,
+            thumbnailHeight: 213,
+            caption: "Time to Think (Tom Eversley - isorepublic.com)"
+        },
+        {
+            src: "https://c6.staticflickr.com/9/8593/28357129133_f04c73bf1e_b.jpg",
+            thumbnail: "https://c6.staticflickr.com/9/8593/28357129133_f04c73bf1e_n.jpg",
+            thumbnailWidth: 320,
+            thumbnailHeight: 179,
+            tags: [{value: "Nature", title: "Nature"}, {value: "Fauna", title: "Fauna"}],
+            caption: "Untitled (Jan Vasek - jeshoots.com)"
+        },
+        {
+            src: "https://c6.staticflickr.com/9/8893/28897116141_641b88e342_b.jpg",
+            thumbnail: "https://c6.staticflickr.com/9/8893/28897116141_641b88e342_n.jpg",
+            thumbnailWidth: 320,
+            thumbnailHeight: 215,
+            tags: [{value: "People", title: "People"}],
+            caption: "Untitled (moveast.me)"
+        },
+        {
+            src: "https://c1.staticflickr.com/9/8056/28354485944_148d6a5fc1_b.jpg",
+            thumbnail: "https://c1.staticflickr.com/9/8056/28354485944_148d6a5fc1_n.jpg",
+            thumbnailWidth: 257,
+            thumbnailHeight: 320,
+            caption: "A photo by 贝莉儿 NG. (unsplash.com)"
+        },
+        {
+            src: "https://c7.staticflickr.com/9/8824/28868764222_19f3b30773_b.jpg",
+            thumbnail: "https://c7.staticflickr.com/9/8824/28868764222_19f3b30773_n.jpg",
+            thumbnailWidth: 226,
+            thumbnailHeight: 320,
+            caption: "A photo by Matthew Wiebe. (unsplash.com)"
         }
-        {...photo}
-        onClick={handleOnClick}
-      />
-      <style>{`.not-selected:hover{outline:2px solid #06befa}`}</style>
-    </div>
-  );
+    ].splice(0,16)
 };
 
-export default YourPhotos;
 
+//ReactDOM.render(<YourPhotos />, document.getElementById('YourPhotos'));
+export default YourPhotos;
