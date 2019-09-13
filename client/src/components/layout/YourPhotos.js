@@ -88,19 +88,20 @@ class YourPhotos extends React.Component {
             isSelected={this.state.selectAllChecked}
             onClick={this.onClickSelectAll}
             parentHover={true}
-            color={"rgba(0,0,0,0.54)"}
+            color={"#2D2F33"}
             selectedColor={"#4285f4"}
-            hoverColor={"rgba(0,0,0,0.54)"}/>
+            hoverColor={"#2D2F33"}/>
                 <div style={{
                     height: "36px",
                     display: "flex",
-                    alignItems: "center"
+                    alignItems: "center",
+                    color: "#2D2F33"
                 }}>
                 select all
                 </div>
                 <div style={{
                     padding: "2px",
-                    color: "#666"
+                    color: "#2D2F33"
                 }}>Selected images: {this.getSelectedImages().toString()}</div>
                 <div style={{
                     display: "block",
