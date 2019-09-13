@@ -83,6 +83,26 @@ class YourPhotos extends React.Component {
     render () {
         return (
                 <div style={{backgroundColor: "#c0aa3d"}}>
+                <div className="row" style={{ textAlign:"center", color:"white"}}>
+                    <div className="col s12">
+                        <h3>Hello, welcome to PhotoSwami!</h3>
+                    </div>
+                </div>
+                <div className="row" style={{ textAlign:"center", padding:"0", margin:"0", color:"white"}}>
+                    <div className="col s12">
+                        <h6>Step 1) Take a Photo <span>(You've already done that!</span></h6>
+                    </div>
+                </div>
+                <div className="row" style={{ textAlign:"center", padding:"0", margin:"0", color:"white"}}>
+                    <div className="col s12">
+                        <h6>Step 2) Pick your Favorites</h6>
+                    </div>
+                </div>
+                <div className="row" style={{ textAlign:"center", padding:"0", margin:"0", color:"white"}}>
+                    <div className="col s12">
+                        <h6>Step 3) Invest in your memories</h6>
+                    </div>
+                </div>
                 <CheckButton
             index={0}
             isSelected={this.state.selectAllChecked}
@@ -97,7 +117,7 @@ class YourPhotos extends React.Component {
                     alignItems: "center",
                     color: "#2D2F33"
                 }}>
-                select all
+                Select All Photos
                 </div>
                 <div style={{
                     padding: "2px",
@@ -114,6 +134,7 @@ class YourPhotos extends React.Component {
             onSelectImage={this.onSelectImage}
             showLightboxThumbnails={true}/>
                 </div>
+                <div className="row" style={{height:"200px", padding:"0", margin:"0"}}></div>
                 </div>
         );
     }
