@@ -30,7 +30,7 @@ class Navbar extends Component {
                 }}
                 className="hoverable accent-3"
               >
-                iOs User
+                iOS User
               </Link>
               <Link
                 to="/iosphotographer"
@@ -42,7 +42,7 @@ class Navbar extends Component {
                 }}
                 className="hoverable accent-3"
               >
-                iOs Photographer
+                iOS Photographer
               </Link>
               {/* <Link
                 to="/register"

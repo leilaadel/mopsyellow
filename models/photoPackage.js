@@ -2,27 +2,31 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 // Create Schema
-const UserSchema = new Schema({
-  firstName: {
+const photoPackageSchema = new Schema({
+  photographerId: {
     type: String,
     required: true
   },
-  lastName: {
+  packageId: {
     type: String,
     required: true
   },
-  email: {
+  title: {
     type: String,
     required: true
   },
-  phoneNumber: {
+  price: {
     type: String,
     default: true
   },
-  password: {
+  time: {
+    type: String,
+    required: true
+  },
+  description: {
     type: String,
     required: true
   },
 });
 
-module.exports = User = mongoose.model("users", UserSchema);
+module.exports = photoPackage = mongoose.model("photoPackage", photoPackageSchema);

@@ -90,17 +90,17 @@ class YourPhotos extends React.Component {
                 </div>
                 <div className="row" style={{ textAlign:"center", padding:"0", margin:"0", color:"white"}}>
                     <div className="col s12">
-                        <h6>Step 1) Take a Photo <span>(You've already done that!</span></h6>
+                        <h6 style={{ fontSize: "26px"}}>Step 1) Take a Photo <span>(You've already done that!)</span></h6>
                     </div>
                 </div>
                 <div className="row" style={{ textAlign:"center", padding:"0", margin:"0", color:"white"}}>
                     <div className="col s12">
-                        <h6>Step 2) Pick your Favorites</h6>
+                        <h6 style={{ fontSize: "26px"}}>Step 2) Pick your Favorites</h6>
                     </div>
                 </div>
                 <div className="row" style={{ textAlign:"center", padding:"0", margin:"0", color:"white"}}>
                     <div className="col s12">
-                        <h6>Step 3) Invest in your memories</h6>
+                        <h6 style={{ fontSize: "26px"}}>Step 3) Invest in your memories</h6>
                     </div>
                 </div>
                 <CheckButton
