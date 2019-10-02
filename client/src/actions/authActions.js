@@ -4,15 +4,18 @@ import jwt_decode from "jwt-decode";
 
 import { GET_ERRORS, SET_CURRENT_USER, USER_LOADING } from "./types";
 
+//let BASE_DEV_URL = "http://138.68.240.249:3000/api"
 // Register User
 export const registerUser = (userData, history) => dispatch => {
   axios
-    .post("/api/users/register", userData)
+    //.post("/api/users/register", userData)
+    .post("http://138.68.240.249:3000/api/auth/user/register", userData)
     .then(res => history.push("/login"))
     .catch(err =>
       dispatch({
         type: GET_ERRORS,
-        payload: err.response.data
+        payload: err
+       // payload: err.response.data
       })
     );
 };

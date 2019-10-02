@@ -33,6 +33,12 @@ class Register extends Component {
       });
     }
   }
+/*
+  RegisterUser(){
+    $.getJSON('https://randomuser.me/api/')
+      .then(({ results }) => this.setState({ person: results }));
+  }
+  */
 
   onChange = e => {
     this.setState({ [e.target.id]: e.target.value });
