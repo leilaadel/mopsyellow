@@ -1,0 +1,23 @@
+body{
+    background-color: #c0aa3d;
+}
+
+.pad-left{
+    padding-left:15px;
+
+}
+.pad-right{
+    padding-right:15px;
+}
+
+.marg-left{
+    margin-left:15px;
+}
+
+.marg-right{
+    margin-right:15px;
+}
+
+.parent-ht{
+    height:inherit;
+}

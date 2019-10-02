@@ -7,6 +7,11 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import store from "./store";
 
+import $ from 'jquery'; 
+//import "../../node_modules/jquery/dist/jquery.min.js";
+import "bootstrap/js/src/collapse.js";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import Navbar from "./components/layout/Navbar";
 import Landing from "./components/layout/Landing";
 import iOSUser from "./components/layout/iOSUser";

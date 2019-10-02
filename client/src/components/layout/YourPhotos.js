@@ -100,7 +100,7 @@ class YourPhotos extends React.Component {
                 </div>
                 <div className="row" style={{ textAlign:"center", padding:"0", margin:"0", color:"white"}}>
                     <div className="col s12">
-                        <h6 style={{ fontSize: "26px"}}>Step 3) Invest in your memories</h6>
+                        <h6 style={{ fontSize: "26px"}}>Step 3) Purchase your memories through our secure Stripe checkout</h6>
                     </div>
                 </div>
                 <CheckButton
@@ -121,13 +121,14 @@ class YourPhotos extends React.Component {
                 </div>
                 <div style={{
                     padding: "2px",
-                    color: "#2D2F33"
+                    color: "#2D2F33",
+                    marginLeft:"15px",
                 }}>Selected images: {this.getSelectedImages().toString()}</div>
                 <div style={{
                     display: "block",
                     minHeight: "1px",
                     width: "100%",
-                    border: "1px solid #2D2F33",
+                    padding: "15px",
                     overflow: "auto"}}>
                 <Gallery
             images={this.state.images}

@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import photographerImg from "/Users/shaina/Desktop/mopsyellow/client/src/images/adult-backpack-camera-305086.jpg";
+import photoShootImg from "/Users/shaina/Desktop/mopsyellow/client/src/images/adorable-black-and-white-blur-260175.jpg";
 
+import "./Landing.css";
 class Landing extends Component {
   render() {
     return (
@@ -18,51 +21,53 @@ class Landing extends Component {
           paddingTop: "20px",
           backgroundColor: "#c0aa3d",
           position: "relative",
-          height: "300px"//,
+          height: "fit-content"//,
+          //width: "fit-content"//,
+          //padding: "0 1.05rem"//,
          // clipPath: polygon( 0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw) )
                 }}>
-          <div className="col s4 info-box-banner">
+          <div className="col m4 info-box-banner">
             <div className="row">
               <div className="col s12 info-box-banner-client" style={{textAlign: "center"}}>
-                <h2 className="banner-client-h2" style={{ fontSize:"2.30rem"}}>Take A Vacation</h2>
+                <h2 className="banner-client-h2">Take A Vacation</h2>
               </div>
             </div>
             <hr className="header-hr" style={{width:"50%", color:"white"}} />
             <div className="row">
               <div className="col s12 info-box-banner-photographer" style={{textAlign: "center"}}>
-                <h2 className="banner-photographer-h2" style={{ fontSize:"2.30rem"}}>Grab your Camera</h2>
+                <h2 className="banner-photographer-h2">Grab your Camera</h2>
               </div>
             </div>
           </div>
-          <div className="col s4 info-box-banner">
+          <div className="col m4 info-box-banner">
             <div className="row">
               <div className="col s12 info-box-banner-client" style={{textAlign: "center"}}>
-                <h2 className="banner-client-h2" style={{ fontSize:"2.30rem"}}>Find a Scenic Location</h2>
+                <h2 className="banner-client-h2">Find a Scenic Location</h2>
               </div>
             </div>
             <hr className="header-hr" style={{width:"50%", color:"white"}} />
             <div className="row">
               <div className="col s12 info-box-banner-photographer" style={{textAlign: "center"}}>
-                <h2 className="banner-photographer-h2" style={{ fontSize:"2.30rem"}}>Look for the Crowds</h2>
+                <h2 className="banner-photographer-h2">Look for the Crowds</h2>
               </div>
             </div>
           </div>
-          <div className="col s4 info-box-banner">
+          <div className="col m4 info-box-banner">
             <div className="row">
               <div className="col s12 info-box-banner-client" style={{textAlign: "center"}}>
-                <h2 className="banner-client-h2" style={{ fontSize:"2.30rem"}}>Get a Timeless Memory</h2>
+                <h2 className="banner-client-h2">Get a Timeless Memory</h2>
               </div>
             </div>
             <hr className="header-hr" style={{width:"50%", color:"white"}} />
             <div className="row">
               <div className="col s12 info-box-banner-photographer" style={{textAlign: "center"}}>
-                <h2 className="banner-photographer-h2" style={{ fontSize:"2.30rem"}}>Snap the Smiles</h2>
+                <h2 className="banner-photographer-h2">Snap the Smiles</h2>
               </div>
             </div>
           </div>
         </div>
         <div className="row">
-          <div className="col s6" style={{color:"white", textAlign: "center"}}>
+          <div className="col-sm-6" style={{color:"white", textAlign: "center"}}>
             <h2 className="post-box-h2">Make Memories that will last a lifetime</h2>
             <div className="post-box-desc" style={{fontSize:"20px"}}>
               <p>Wish you had access to high quality photography when and where you need it?</p>
@@ -71,7 +76,23 @@ class Landing extends Component {
               <p>Don't like the photos? No problem, have more taken or decide not to buy them there is no obligation</p>
             </div>
           </div>
-          <div className="col s6" style={{color:"white", textAlign: "center"}}>
+          <div className="col-sm-6" style={{color:"white", textAlign: "center"}}>
+          <img style={{width:"100%",
+                    display:"block",
+                    marginLeft:"auto",
+                    marginRight:"auto"}} 
+                src={photoShootImg} alt="PhotoSwami" />
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-sm-6" style={{color:"white", textAlign: "center"}}>
+          <img style={{width:"100%",
+                    display:"block",
+                    marginLeft:"auto",
+                    marginRight:"auto"}} 
+                src={photographerImg} alt="PhotoSwami" />
+          </div>
+          <div className="col-sm-6" style={{color:"white", textAlign: "center"}}>
             <h2 className="post-box-h2">Channel your passions into a Career</h2>
             <div className="post-box-desc" style={{fontSize:"20px"}}>
               <p>Wish you could spend more time taking meaningful photos?</p>

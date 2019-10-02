@@ -1,0 +1,30 @@
+@media only screen and (max-width: 600px) {
+    .navbar-link{
+        color:blue;
+    }
+    #nav-full-screen{
+        display:none;
+    }
+  }
+
+  #nav-full-screen{
+      display:none;
+  }
+
+  .bg-black{
+      background-color:black;
+  }
+
+  .custom-nav{
+      padding:0px;
+  }
+
+  .custom-nav-link{
+    padding-top:0px;
+    padding-bottom:0px;
+}
+
+#photoswami-home-link:hover{
+    color:white;
+    text-decoration: none;
+}
