@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom';
 import Gallery from './Gallery';
 import CheckButton from './CheckButton';
 
+import "./YourPhotos.css";
+
 class YourPhotos extends React.Component {
     constructor(props){
         super(props);
@@ -83,24 +85,57 @@ class YourPhotos extends React.Component {
     render () {
         return (
                 <div style={{backgroundColor: "#c0aa3d"}}>
-                <div className="row" style={{ textAlign:"center", color:"white"}}>
-                    <div className="col s12">
-                        <h3>Hello, welcome to PhotoSwami!</h3>
+                <div className="row welcome-header-row">
+                    <div className="col-sm-12 welcome-header">
+                        <h1 className="font-1">Hello, Welcome to PhotoSwami!</h1>
                     </div>
                 </div>
-                <div className="row" style={{ textAlign:"center", padding:"0", margin:"0", color:"white"}}>
-                    <div className="col s12">
-                        <h6 style={{ fontSize: "26px"}}>Step 1) Take a Photo <span>(You've already done that!)</span></h6>
+                <div className="row" id="steps-row">
+                    <div className="col-sm-4 parent-ht marg-bot-10">
+                        <div className="photo-steps">
+                            <div className="row">
+                                <div className="col-sm-12">
+                                    <h3 className="font-1">Step 1</h3>
+                                    <hr className="hr-white" />
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="col-sm-12 steps-card-content">
+                                    <h3 className="font-1">Take breathtaking photos (You've already done that!)</h3>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div className="row" style={{ textAlign:"center", padding:"0", margin:"0", color:"white"}}>
-                    <div className="col s12">
-                        <h6 style={{ fontSize: "26px"}}>Step 2) Pick your Favorites</h6>
+                    <div className="col-sm-4 parent-ht marg-bot-10">
+                    <div className="photo-steps">
+                        <div className="row">
+                            <div className="col-sm-12">
+                                <h3 className="font-1">Step 2</h3>
+                                <hr className="hr-white" />
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-sm-12 steps-card-content">
+                                <h3 className="font-1">Select your favorites!</h3>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div className="row" style={{ textAlign:"center", padding:"0", margin:"0", color:"white"}}>
-                    <div className="col s12">
-                        <h6 style={{ fontSize: "26px"}}>Step 3) Purchase your memories through our secure Stripe checkout</h6>
+                    </div>
+                    <div className="col-sm-4 parent-ht marg-bot-10">
+                    <div className="photo-steps">
+                        <div className="row">
+                            <div className="col-sm-12">
+                                <h3 className="font-1">Step 3</h3>
+                                <hr className="hr-white" />
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-sm-12 steps-card-content">
+                                <h3 className="font-1">Purchase your memories through our secure Stripe checkout!</h3>
+                            </div>
+                        </div>
+                    </div>
+                        
                     </div>
                 </div>
                 <CheckButton
@@ -117,7 +152,7 @@ class YourPhotos extends React.Component {
                     alignItems: "center",
                     color: "#2D2F33"
                 }}>
-                Select All Photos
+                <h5>Select All Photos</h5>
                 </div>
                 <div style={{
                     padding: "2px",

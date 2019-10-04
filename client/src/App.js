@@ -21,6 +21,7 @@ import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
 import YourPhotos from "./components/layout/YourPhotos";
+import Footer from "./components/layout/Footer";
 
 import "./App.css";
 
@@ -56,6 +57,7 @@ class App extends Component{
             <Route exact path="/iosuser" component={iOSUser} />
             <Route exact path="/iosphotographer" component={iOSPhotographer} />
             <Route exact path="/yourphotos" component={YourPhotos} />
+            <Footer />
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>

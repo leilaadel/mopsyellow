@@ -1,0 +1,33 @@
+#steps-row{
+    margin:20px;
+}
+
+.photo-steps{
+    height:100%;
+    background-color: rgb(45, 47, 51);
+    border-radius: 6px;
+    padding: 10px;
+    color:white;
+}
+
+.hr-white{
+    border-top: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+.steps-card-content{
+    text-align: center;
+}
+
+.welcome-header{
+    text-align: center;
+    color: white;
+    margin-top: 10px;
+}
+
+.welcome-header-row{
+    /*background-image: linear-gradient(to right, #292929 , #79797900, #292929 );*/
+}
+
+.font-1{
+    font-family:monospace;
+}

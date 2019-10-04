@@ -18,6 +18,14 @@ body{
     margin-right:15px;
 }
 
+.marg-top-10{
+    margin-top:10px;
+}
+
+.marg-bot-10{
+    margin-bottom:10px;
+}
+
 .parent-ht{
     height:inherit;
 }
