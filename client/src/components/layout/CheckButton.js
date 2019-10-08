@@ -26,7 +26,7 @@ class CheckButton extends Component {
         if (this.props.isSelected ||
             (this.props.isSelectable && this.props.parentHover))
             return 'visible';
-        return 'hidden';
+        return 'visible';
     }
 
     render () {

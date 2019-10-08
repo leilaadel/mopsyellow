@@ -1,7 +1,7 @@
 export const photos = [
     {
-      src: "https://source.unsplash.com/2ShvY8Lf6l0/800x599",
-      width: 4,
+      src: "https://cdn.pixabay.com/photo/2016/11/08/05/08/adult-1807500_960_720.jpg",
+      width: 6,
       height: 3
     },
     {
