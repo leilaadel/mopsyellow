@@ -89,15 +89,16 @@ class YourPhotos extends React.Component {
                 <div className="row welcome-header-row">
                     <div className="col-sm-12 welcome-header">
                     <img style={{
-                    width:"50px",
+                    width:"60px",
                     display:"inline",
-                    marginLeft:"5px",
-                    marginRight:"5px"}} src="https://cdn.pixabay.com/photo/2016/11/08/05/08/adult-1807500_960_720.jpg" alt="PhotoSwami" />
-                        <h1 className="font-1" style={{display: "inline"}}>PhotoSwami</h1>
+                    marginLeft:"auto",
+                    marginTop: "-15px",
+                    marginRight:"20px"}} src="https://i.imgur.com/mSFQdT6.png" alt="PhotoSwami" />
+                        <h1 className="font-1" style={{display: "inline", paddingTop: "20px", fontFamily: "Michroma", fontSize: "20pt"}}>PhotoSwami</h1>
                     </div>
                 </div>
-                <div style={{margin: "20px"}}>
-                    <h2>Here are todays photos from Bruno</h2> 
+                <div style={{margin: "10px", marginTop: "50px", marginBottom:"30px"}}>
+                    <h3>Here are todays photos from Bruno</h3> 
                 </div>
                         {/* <div className="row" id="steps-row">
                             <div className="col-sm-4 parent-ht marg-bot-10">
@@ -179,7 +180,32 @@ class YourPhotos extends React.Component {
             onSelectImage={this.onSelectImage}
             showLightboxThumbnails={true}/>
                 </div>
-                <div className="row" style={{height:"50px", padding:"0", margin:"0"}}></div>
+                
+                <div className="row" style={{height:"50px", padding:"0", margin:"0", marginLeft:"27px"}}>
+                    <img style={{
+                        width:"80px",
+                        display:"inline",
+                        marginLeft:"20px",
+                        marginTop: "-15px",
+                        // marginRight:"20px"
+                        }} src="https://images.unsplash.com/photo-1511895426328-dc8714191300?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="PhotoSwami" />
+                    <img style={{
+                        width:"80px",
+                        display:"inline",
+                        marginLeft:"20px",
+                        marginTop: "-15px",
+                        // marginRight:"20px"
+                        }} src="https://images.unsplash.com/photo-1496275068113-fff8c90750d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="PhotoSwami" />
+                    <img style={{
+                        width:"80px",
+                        display:"inline",
+                        marginLeft:"20px",
+                        marginTop: "-15px",
+                        // marginRight:"20px"
+                        }} src="https://images.unsplash.com/photo-1496275068113-fff8c90750d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="PhotoSwami" />
+                
+                </div>
+                
                 <div class="box">
                     <a class="button" href="#popup1">Checkout</a>
                 </div>

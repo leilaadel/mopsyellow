@@ -34,12 +34,13 @@ class NavbarComponent extends Component {
                 style={{
                   width: "140px",
                   borderRadius: "3px",
-                  letterSpacing: "1.5px"//,
+                  letterSpacing: "1.5px",
+                  fontFamily: "Michroma"//,
                   //fontSize: "2.8vw"
                 }}
                 className="hoverable accent-3 navbar-link"
               >
-                PhotoSwami
+              <div style={{fontFamily: "Michroma"}}>PhotoSwami</div>
               </Link>
               {/* <Link
                 to="/iosuser"

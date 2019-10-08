@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Michroma&display=swap');
+
 #steps-row{
     margin:20px;
 }
@@ -21,7 +23,7 @@
 .welcome-header{
     text-align: center;
     color: white;
-    margin-top: 10px;
+    margin-top: 30px;
 }
 
 .welcome-header-row{
