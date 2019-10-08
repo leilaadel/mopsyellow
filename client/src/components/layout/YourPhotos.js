@@ -3,6 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Gallery from './Gallery';
 import CheckButton from './CheckButton';
+import { Link } from "react-router-dom";
 
 import "./YourPhotos.css";
 
@@ -87,8 +88,16 @@ class YourPhotos extends React.Component {
                 <div style={{backgroundColor: "#c0aa3d"}}>
                 <div className="row welcome-header-row">
                     <div className="col-sm-12 welcome-header">
-                        <h1 className="font-1">PhotoSwami</h1>
+                    <img style={{
+                    width:"50px",
+                    display:"inline",
+                    marginLeft:"5px",
+                    marginRight:"5px"}} src="https://cdn.pixabay.com/photo/2016/11/08/05/08/adult-1807500_960_720.jpg" alt="PhotoSwami" />
+                        <h1 className="font-1" style={{display: "inline"}}>PhotoSwami</h1>
                     </div>
+                </div>
+                <div style={{margin: "20px"}}>
+                    <h2>Here are todays photos from Bruno</h2> 
                 </div>
                         {/* <div className="row" id="steps-row">
                             <div className="col-sm-4 parent-ht marg-bot-10">
@@ -163,18 +172,38 @@ class YourPhotos extends React.Component {
                     display: "block",
                     minHeight: "1px",
                     width: "100%",
-                    padding: "15px",
+                    padding: "10%",
                     overflow: "auto"}}>
                 <Gallery
             images={this.state.images}
             onSelectImage={this.onSelectImage}
             showLightboxThumbnails={true}/>
                 </div>
-                <div className="row" style={{height:"200px", padding:"0", margin:"0"}}></div>
-                <h1>test button location</h1>
+                <div className="row" style={{height:"50px", padding:"0", margin:"0"}}></div>
+                <div class="box">
+                    <a class="button" href="#popup1">Checkout</a>
                 </div>
-            
-            
+
+                <div id="popup1" class="overlay">
+                    <div class="popup">
+                        <h2>Checkout</h2>
+                        <a class="close" href="#">&times;</a>
+                        <div class="content">
+                            <Link
+                                to="/postcheckout"
+                                style={{
+                                width: "140px",
+                                borderRadius: "3px",
+                                letterSpacing: "1.5px"//,
+                                //fontSize: "2.8vw"
+                                }}
+                                className="hoverable accent-3 navbar-link">
+                                PostCheckOut
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+                </div>          
             
         );
     }
@@ -199,23 +228,23 @@ YourPhotos.defaultProps = {
         {
             src: "https://cdn.pixabay.com/photo/2016/11/08/05/08/adult-1807500_960_720.jpg",
             thumbnail: "https://cdn.pixabay.com/photo/2016/11/08/05/08/adult-1807500_960_720.jpg",
-            thumbnailWidth: 800,
-            thumbnailHeight: 500,
+            thumbnailWidth: 500,
+            thumbnailHeight: 300,
             // tags: [{value: "Nature", title: "Nature"}, {value: "Flora", title: "Flora"}],
             caption: "After Rain (Jeshu John - designerspics.com)"
         },
         // {
         //     src: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_b.jpg",
         //     thumbnail: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_n.jpg",
-        //     thumbnailWidth: 320,
-        //     thumbnailHeight: 212,
+        //     thumbnailWidth: 100,
+        //     thumbnailHeight: 100,
         //     caption: "Boats (Jeshu John - designerspics.com)"
         // },
         // {
         //     src: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg",
         //     thumbnail: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_n.jpg",
-        //     thumbnailWidth: 320,
-        //     thumbnailHeight: 212,
+        //     thumbnailWidth: 100,
+        //     thumbnailHeight: 100,
         //     caption: "Color Pencils (Jeshu John - designerspics.com)"
         // },
         // {
