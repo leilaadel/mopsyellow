@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import photographerImg from "/home/leila/mern-auth/client/src/images/adult-backpack-camera-305086.jpg";
-import photoShootImg from "/home/leila/mern-auth/client/src/images/adorable-black-and-white-blur-260175.jpg";
+import photographerImg from "/Users/shaina/Desktop/mopsyellow/client/src/images/adult-backpack-camera-305086.jpg";
+import photoShootImg from "/Users/shaina/Desktop/mopsyellow/client/src/images/adorable-black-and-white-blur-260175.jpg";
+//import photographerImg from "/home/leila/mern-auth/client/src/images/adult-backpack-camera-305086.jpg";
+//import photoShootImg from "/home/leila/mern-auth/client/src/images/adorable-black-and-white-blur-260175.jpg";
 
 import "./Landing.css";
 class Landing extends Component {

@@ -169,7 +169,8 @@ class YourPhotos extends React.Component {
                     color: "#2D2F33",
                     marginLeft:"15px",
                 }}>Selected images: {this.getSelectedImages().toString()}</div>
-                <div style={{
+                    <div id="your-photos-col">
+                    <div style={{
                     display: "block",
                     minHeight: "1px",
                     width: "100%",
@@ -180,23 +181,25 @@ class YourPhotos extends React.Component {
             onSelectImage={this.onSelectImage}
             showLightboxThumbnails={true}/>
                 </div>
+                    </div>
                 
-                <div className="row" style={{height:"50px", padding:"0", margin:"0", marginLeft:"27px"}}>
-                    <img style={{
+                
+                <div className="your-photo-collection box">
+                    <img className="your-photo-collection-item" style={{
                         width:"80px",
                         display:"inline",
-                        marginLeft:"20px",
+                        //marginLeft:"20px",
                         marginTop: "-15px",
                         // marginRight:"20px"
                         }} src="https://images.unsplash.com/photo-1511895426328-dc8714191300?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="PhotoSwami" />
-                    <img style={{
+                    <img className="your-photo-collection-item" style={{
                         width:"80px",
                         display:"inline",
                         marginLeft:"20px",
                         marginTop: "-15px",
                         // marginRight:"20px"
                         }} src="https://images.unsplash.com/photo-1496275068113-fff8c90750d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="PhotoSwami" />
-                    <img style={{
+                    <img className="your-photo-collection-item" style={{
                         width:"80px",
                         display:"inline",
                         marginLeft:"20px",

@@ -129,3 +129,47 @@ body {
       width: 70%;
     }
   }
+
+  @media screen and (min-width: 700px) {
+    #your-photos-col{
+      flex: 0 0 50%;
+      max-width: 50%;
+      margin-left: 25%;
+    }
+/*
+    .your-photo-collection{
+      flex: 0 0 50%;
+      max-width: 50%;
+      margin-left: 30%;
+    }
+  
+    .your-photo-collection-item{
+
+    }
+*/
+  }
+
+  @media screen and (max-width:699px){
+    #your-photos-col{
+      max-width: 100%;
+    }
+
+    .your-photo-collection{
+      width:100%;
+    }
+/*
+    .your-photo-collection{
+      width:80px;
+      display:inline;
+      margin-left:20px;
+      margin-top: -15px;
+      padding:0;
+    }
+    */
+  }
+
+  .your-photo-collection{
+    padding:0;
+  }
+
+
