@@ -36,12 +36,6 @@ client/src/components/layouts/PostCheckOut
 // Unlinked pages for future use:
 client/src/components/layouts/iOSPhotographer
 client/src/components/layouts/iOSUser
-
 I had mocked up the iOS app info pages greg told me we would need to get launched on the app store.
 
-
-// Models are located at:
-npm run dev
-
-// 
 ```
