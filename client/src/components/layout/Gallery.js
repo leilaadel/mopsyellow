@@ -375,7 +375,7 @@ Gallery.propTypes = {
 Gallery.defaultProps = {
     id: "ReactGridGallery",
     enableImageSelection: true,
-    rowHeight: 180,
+    rowHeight: 280,
     margin: 2,
     enableLightbox: true,
     backdropClosesModal: false,

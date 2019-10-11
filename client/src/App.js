@@ -7,6 +7,11 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import store from "./store";
 
+import $ from 'jquery'; 
+//import "../../node_modules/jquery/dist/jquery.min.js";
+import "bootstrap/js/src/collapse.js";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import Navbar from "./components/layout/Navbar";
 import Landing from "./components/layout/Landing";
 import iOSUser from "./components/layout/iOSUser";
@@ -16,6 +21,8 @@ import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
 import YourPhotos from "./components/layout/YourPhotos";
+import PostCheckOut from "./components/layout/PostCheckOut";
+import Footer from "./components/layout/Footer";
 
 import "./App.css";
 
@@ -51,6 +58,8 @@ class App extends Component{
             <Route exact path="/iosuser" component={iOSUser} />
             <Route exact path="/iosphotographer" component={iOSPhotographer} />
             <Route exact path="/yourphotos" component={YourPhotos} />
+            <Route exact path="/postcheckout" component={PostCheckOut} />
+            <Footer />
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>
