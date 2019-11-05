@@ -97,8 +97,8 @@ class YourPhotos extends React.Component {
                         <h1 className="font-1" style={{display: "inline", paddingTop: "20px", fontFamily: "Michroma", fontSize: "20pt"}}>PhotoSwami</h1>
                     </div>
                 </div>
-                <div style={{margin: "10px", marginTop: "50px", marginBottom:"30px"}}>
-                    <h3>Here are todays photos from Bruno</h3> 
+                <div style={{margin: "10px", marginTop: "50px", marginBottom:"30px", textAlign: "center"}}>
+                    <h3>Here are todays photos from your photographer, Bruno</h3> 
                 </div>
                         {/* <div className="row" id="steps-row">
                             <div className="col-sm-4 parent-ht marg-bot-10">
@@ -164,11 +164,11 @@ class YourPhotos extends React.Component {
                 }}>
                 <h5>Select All Photos, or tap on the individual photos</h5>
                 </div>
-                <div style={{
+                {/* <div style={{
                     padding: "2px",
                     color: "#2D2F33",
                     marginLeft:"15px",
-                }}>Selected images: {this.getSelectedImages().toString()}</div>
+                }}>Selected images: {this.getSelectedImages().toString()}</div> */}
                 <div style={{
                     display: "block",
                     minHeight: "1px",
@@ -202,8 +202,24 @@ class YourPhotos extends React.Component {
                         marginLeft:"20px",
                         marginTop: "-15px",
                         // marginRight:"20px"
-                        }} src="https://images.unsplash.com/photo-1496275068113-fff8c90750d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="PhotoSwami" />
-                
+                        }} src="https://images.unsplash.com/photo-1518159357049-bb438a340932?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="PhotoSwami" />
+                    
+                    {/* <div class="col-md-2">
+				    <div class="gallery-card">
+					<div class="gallery-card-body"></div>
+                    <label class="block-check">
+                    <img style={{
+                        width:"80px",
+                        display:"inline",
+                        marginLeft:"20px",
+                        marginTop: "-15px",
+                        // marginRight:"20px"
+                        }} src="https://images.unsplash.com/photo-1496275068113-fff8c90750d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="PhotoSwami" class="img-responsive"/>
+                        <input type="checkbox" />
+					    <span class="checkmark"></span>
+					  </label>
+                      </div>
+                      </div> */}
                 </div>
                 
                 <div class="box">
@@ -219,7 +235,7 @@ class YourPhotos extends React.Component {
                                 to="/postcheckout"
                                 style={{
                                 width: "140px",
-                                borderRadius: "3px",
+                                // borderRadius: "3px",
                                 letterSpacing: "1.5px"//,
                                 //fontSize: "2.8vw"
                                 }}

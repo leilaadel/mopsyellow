@@ -17,12 +17,13 @@ import Landing from "./components/layout/Landing";
 import iOSUser from "./components/layout/iOSUser";
 import iOSPhotographer from "./components/layout/iOSPhotographer";
 import Register from "./components/auth/Register";
+import PhoneVerification from "./components/layout/PhoneVerification";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
 import YourPhotos from "./components/layout/YourPhotos";
 import PostCheckOut from "./components/layout/PostCheckOut";
-import Footer from "./components/layout/Footer";
+//import Footer from "./components/layout/Footer";
 
 import "./App.css";
 
@@ -59,7 +60,8 @@ class App extends Component{
             <Route exact path="/iosphotographer" component={iOSPhotographer} />
             <Route exact path="/yourphotos" component={YourPhotos} />
             <Route exact path="/postcheckout" component={PostCheckOut} />
-            <Footer />
+            <Route exact path="/phoneverification" component={PhoneVerification} />
+            {/* <Footer /> */}
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>
