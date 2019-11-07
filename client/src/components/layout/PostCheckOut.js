@@ -152,7 +152,7 @@ class PostCheckOut extends Component {
             borderRadius: "5px"
         }}>Download</button>     
 
-        <div className="row" style={{
+        <div className="row" slstyle={{
             backgroundColor: "#c0aa3d",
             textAlign:"center"}}>
             <div className="col s12">

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 import "./PhoneVerification.css";
 
-class PhoneVerification extends React.Component {
+class CodeVerification extends React.Component {
     constructor(props){
         super(props);
 
@@ -35,22 +35,6 @@ class PhoneVerification extends React.Component {
                     <div style={{margin: "10px", marginTop: "50px", marginBottom:"30px", textAlign: "center"}}>
                         <h3>Verify your phone number to access your photos</h3>
                     </div>
-                    
-                    <div id="form-main1">
-                        <div id="form-div">
-                            <form class="form" id="form1" onSubmit={ document.getElementById('first').style.display = 'none' }>
-                            <p class="phone">
-                                <input name="phone" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Phone Number" id="phone" />
-                            </p>
-
-                            <div class="submit">
-                                <input type="submit" value="Send Verification Code" id="button-blue"/>
-                                <div class="ease"></div>
-                            </div>
-                            </form>
-                        </div>
-
-                    </div>
 
                     <div id="form-main2">
                         <div id="form-div">
@@ -75,4 +59,4 @@ class PhoneVerification extends React.Component {
 }
 
 //ReactDOM.render(<PhoneVerification />, document.getElementById('YourPhotos'));
-export default PhoneVerification;
+export default CodeVerification;

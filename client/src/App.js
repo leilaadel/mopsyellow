@@ -17,6 +17,7 @@ import Landing from "./components/layout/Landing";
 import iOSUser from "./components/layout/iOSUser";
 import iOSPhotographer from "./components/layout/iOSPhotographer";
 import Register from "./components/auth/Register";
+import CodeVerification from "./components/layout/CodeVerification";
 import PhoneVerification from "./components/layout/PhoneVerification";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
@@ -61,6 +62,7 @@ class App extends Component{
             <Route exact path="/yourphotos" component={YourPhotos} />
             <Route exact path="/postcheckout" component={PostCheckOut} />
             <Route exact path="/phoneverification" component={PhoneVerification} />
+            <Route exact path="/codeeverification" component={CodeVerification} />
             {/* <Footer /> */}
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />

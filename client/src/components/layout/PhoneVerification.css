@@ -9,10 +9,18 @@
 	text-align:center;
 }
 
-#form-main{
+#form-main1{
 	width:100%;
 	float:left;
 	padding-top:0px;
+	/* display: ; */
+}
+
+#form-main2{
+	width:100%;
+	float:left;
+	padding-top:0px;
+	/* display: none; */
 }
 
 #form-div {
