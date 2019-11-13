@@ -22,7 +22,7 @@ class PostCheckOut extends Component {
                 <div className="row">
                     <div className="col s12">
                         <h1 style={{marginBottom:"0px", textAlign: "Left"}}>
-                            Available for Purchase
+                            Purchased Photos
                         </h1>
                     </div>
                 </div>
@@ -60,7 +60,7 @@ class PostCheckOut extends Component {
                     </label>
             </div>
         </div>
-        {/* <div className="row">
+        <div className="row">
             <div className="col s6" style={{color:"white", textAlign: "center"}}>
                 <div className="post-box-desc" style={{fontSize:"20px"}}>
                 <img style={{
@@ -85,9 +85,9 @@ class PostCheckOut extends Component {
                     <span class="checkmark"></span>
                     </label>
             </div>
-        </div> */}
+        </div>
         <h2 className="post-box-h2">September, 2019</h2>
-        {/* <div className="row">
+        <div className="row">
             <div className="col s6" style={{color:"white", textAlign: "center"}}>
                 <div className="post-box-desc" style={{fontSize:"20px"}}>
                 <img style={{
@@ -112,7 +112,7 @@ class PostCheckOut extends Component {
                     <span class="checkmark"></span>
                     </label>
             </div>
-        </div> */}
+        </div>
         <div className="row">
             <div className="col s6" style={{color:"white", textAlign: "center"}}>
                 <div className="post-box-desc" style={{fontSize:"20px"}}>
@@ -150,7 +150,7 @@ class PostCheckOut extends Component {
             display: "inline-block",
             fontSize: "S",
             borderRadius: "5px"
-        }}>Purchase</button>     
+        }}>Download</button>     
 
         <div className="row" slstyle={{
             backgroundColor: "#c0aa3d",
@@ -159,7 +159,7 @@ class PostCheckOut extends Component {
                 <div className="row">
                     <div className="col s12">
                         <h1 style={{marginBottom:"0px", marginTop: "50px", textAlign: "left"}}>
-                            Available for Download
+                            Available for Purchase
                         </h1>
                     </div>
                 </div>
@@ -197,7 +197,7 @@ class PostCheckOut extends Component {
                     </label>
             </div>
         </div>
-        {/* <div className="row">
+        <div className="row">
             <div className="col s6" style={{color:"white", textAlign: "center"}}>
                 <div className="post-box-desc" style={{fontSize:"20px"}}>
                 <img style={{
@@ -221,8 +221,8 @@ class PostCheckOut extends Component {
                     <input type="checkbox"/>
                     <span class="checkmark"></span>
                     </label>
-            </div> */}
-        {/* </div>   */}
+            </div>
+        </div>  
         <button type="button" style={{
             backgroundColor: "gray", /* Green */
             border: "none",
@@ -234,7 +234,7 @@ class PostCheckOut extends Component {
             display: "inline-block",
             fontSize: "S",
             borderRadius: "5px"
-        }}>Download</button>           
+        }}>Purchase</button>           
 
         <div className="row" style={{
             backgroundColor: "#c0aa3d",

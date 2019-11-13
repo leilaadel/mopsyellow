@@ -62,7 +62,7 @@ class App extends Component{
             <Route exact path="/yourphotos" component={YourPhotos} />
             <Route exact path="/postcheckout" component={PostCheckOut} />
             <Route exact path="/phoneverification" component={PhoneVerification} />
-            <Route exact path="/codeeverification" component={CodeVerification} />
+            <Route exact path="/codeverification" component={CodeVerification} />
             {/* <Footer /> */}
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />

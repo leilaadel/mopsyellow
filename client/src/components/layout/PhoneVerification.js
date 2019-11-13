@@ -4,19 +4,52 @@ import ReactDOM from 'react-dom';
 import { Link } from "react-router-dom";
 
 import "./PhoneVerification.css";
+import PhoneInput from 'react-phone-number-input'
+import axios from 'axios';
 
 class PhoneVerification extends React.Component {
+    // var phoneNumber = '';
     constructor(props){
         super(props);
-
-        // this.handleSubmit = this.handleSubmit.bind(this);
-        // };
-
-        // handleSubmit(e) {
-        //     alert("hello");
-        // };
-
+        this.state = {value: ''};
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        
     }
+
+    handleChange(event) {
+        this.setState({value: event.target.value});
+        console.log(event.target.value);
+        
+        // phoneNumber = event.target.value;
+        // console.log(phoneNumber);
+        // value => this.setState({ value });
+    }
+
+    handleSubmit(event) {
+    // alert('A name was submitted: ' + this.state.value);
+    // window.location.href("./CodeVerification");
+        event.preventDefault();
+        //axios connecting to server and sending phone number to http://photoswami.com:3000/api/auth/user/verify_phone
+        console.log(this.state.value+"test");
+
+        axios.post('http://photoswami.com:3000/api/auth/user/verify_phone', {
+            phoneNumber: this.state.value,
+          })
+          .then(function (response) {
+            console.log(response);
+            console.log("success");
+            // console.log(phoneNumber);
+          })
+          .catch(function (error) {
+            console.log(error);
+            console.log("error");
+            // console.log(phoneNumber);
+          });
+          
+        this.props.history.push('/codeverification/');
+    
+  }
 
     render () {
         return (
@@ -38,30 +71,14 @@ class PhoneVerification extends React.Component {
                     
                     <div id="form-main1">
                         <div id="form-div">
-                            <form class="form" id="form1" onSubmit={ document.getElementById('first').style.display = 'none' }>
+                            <form class="form" id="form1" onSubmit={this.handleSubmit}>
                             <p class="phone">
-                                <input name="phone" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Phone Number" id="phone" />
+                                <input name="phone" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Phone Number" id="phone" value={this.state.value} onChange={this.handleChange} />
+                                {/* <PhoneInput name="phone" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Phone Number" id="phone" value={this.state.value} onChange={this.handleChange} /> */}
                             </p>
 
                             <div class="submit">
                                 <input type="submit" value="Send Verification Code" id="button-blue"/>
-                                <div class="ease"></div>
-                            </div>
-                            </form>
-                        </div>
-
-                    </div>
-
-                    <div id="form-main2">
-                        <div id="form-div">
-                            <form class="form" id="form1">
-                            
-                            <p class="verCode">
-                                <input name="verCode" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Verification Code" id="verCode" />
-                            </p>
-
-                            <div class="submit">
-                                <input type="submit" value="Validate Phone Number" id="button-blue2"/>
                                 <div class="ease"></div>
                             </div>
                             </form>
