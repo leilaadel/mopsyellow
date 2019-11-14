@@ -33,7 +33,7 @@ class PhoneVerification extends React.Component {
         //axios connecting to server and sending phone number to http://photoswami.com:3000/api/auth/user/verify_phone
         console.log(this.state.value+"test");
 
-        axios.post('https://photoswami.com/api/auth/user/verify_phone', {
+        axios.post('https://photoswami.com/api/verifyphone', {
             phoneNumber: this.state.value,
           })
           .then(function (response) {
@@ -46,7 +46,7 @@ class PhoneVerification extends React.Component {
             console.log("error");
           });
         document.getElementById("form-main1").style.display = "none";
-        document.getElementById("form-main2").style.visibility = "visible";
+        document.getElementById("form-main2").style.display = "";
         document.getElementById("access-info").style.display="";
         // this.props.history.push('/codeverification/');
         phoneNumber = this.state.value;
@@ -59,11 +59,10 @@ class PhoneVerification extends React.Component {
         // window.location.href("./CodeVerification");
             event.preventDefault();
             //axios connecting to server and sending phone number to http://photoswami.com:3000/api/auth/user/verify_phone
-            console.log(this.state.value+"test");
     
-            axios.post('https://photoswami.com/api/auth/user/verify_code', {
-                code: this.state.value,
-                phoneNumber: phoneNumber,
+            axios.post('https://photoswami.com/api/verifycode', {
+                phoneNumber: phoneNumber,    
+                validationCode: this.state.value,
               })
               .then(function (response) {
                 console.log(response);
@@ -116,7 +115,7 @@ class PhoneVerification extends React.Component {
 
                     </div>
 
-                    <div id="form-main2" style={{visibility: "hidden", textAlign: "center"}}>
+                    <div id="form-main2" style={{display: "none", textAlign: "center"}}>
                         <div id="form-div">
                             <form class="form2" id="form2" onSubmit={this.handleSubmitCode}>
                             <p class="code">
@@ -131,6 +130,8 @@ class PhoneVerification extends React.Component {
                         </div>
 
                     </div>
+
+                    <h4 style={{textAlign: "center", paddingBottom: "-20px"}}>Join PhotoSwami today for no membership fee and unlimited cloud storage</h4> 
             </div>           
             
         );
