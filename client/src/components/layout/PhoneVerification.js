@@ -50,6 +50,8 @@ class PhoneVerification extends React.Component {
         document.getElementById("access-info").style.display="";
         // this.props.history.push('/codeverification/');
         phoneNumber = this.state.value;
+        // this.state.value = "";
+        // console.log(this.state.value);
     }
 
     handleSubmitCode(event) {
@@ -73,6 +75,7 @@ class PhoneVerification extends React.Component {
                 console.log("error");
               });
             this.props.history.push('/postcheckout/');
+
     }
 
     render () {
