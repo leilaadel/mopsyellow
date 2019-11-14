@@ -33,8 +33,25 @@ class PostCheckOut extends Component {
                 </div> */}
             </div>
         </div>
-        <h2 className="post-box-h2">October, 2019</h2>
+        <div class="photo-block" style={{width: "100%"}}>
+            <img src="https://cdn.pixabay.com/photo/2016/11/08/05/08/adult-1807500_960_720.jpg" alt="photoswami"/>
+            <label class="container">
+                    <input type="checkbox"/>
+                    <span class="checkmark"></span>
+            </label>
+        </div>
         <div className="row">
+            {/* <form>
+                <div class="select-image">
+                    <img src="https://cdn.pixabay.com/photo/2016/11/08/05/08/adult-1807500_960_720.jpg" alt="image>"
+                    <input type="checkbox" name="vehicle1" value="Bike"/> I have a bike<br>
+                </div>
+                <input type="checkbox" name="vehicle2" value="Car"/> I have a car
+            </form>  */}
+        </div>
+
+        {/* <h2 className="post-box-h2">October, 2019</h2> */}
+        {/* <div className="row">
             <div className="col s6" style={{color:"white", textAlign: "center"}}>
                 <div className="post-box-desc" style={{fontSize:"20px"}}>
                 <img style={{
@@ -58,8 +75,8 @@ class PostCheckOut extends Component {
                     <input type="checkbox"/>
                     <span class="checkmark"></span>
                     </label>
-            </div>
-        </div>
+            </div> */}
+        {/* </div> */}
         {/* <div className="row">
             <div className="col s6" style={{color:"white", textAlign: "center"}}>
                 <div className="post-box-desc" style={{fontSize:"20px"}}>

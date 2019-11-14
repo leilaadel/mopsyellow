@@ -1,3 +1,9 @@
+.photo-block {
+  width: 80%;
+}
+img{
+  width: 100%;
+}
 .container {
     display: block;
     position: relative;
@@ -9,6 +15,7 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    text-align: center;
   }
   
   /* Hide the browser's default checkbox */
